@@ -2,7 +2,7 @@
 
 var dyn = d3.select("#dynamic");
 var per = [-6.8,-3.3]; // perc
-var surdef = [-1.04,.552]; // tril
+var surdef = [-1.04,-.552]; // tril
 var gdp = [15.3,16.5]; // tril
 var rev = [2.34,2.99]; // tril
 var spend = [3.37,3.54]; // tril
@@ -24,7 +24,14 @@ var makeBars = function(arr) {
 	});
 };
 
+// makeBars(per);
+// makeBars(surdef);
 makeBars(gdp);
+// makeBars(rev);
+// makeBars(spend);
+// makeBars(mand);
+// makeBars(disc);
+// makeBars(debt);
 
 var transitionTest = function( scale ) {
     dyn.selectAll("div")

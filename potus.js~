@@ -1,0 +1,30 @@
+     var dyn = d3.select("#dynamic");
+     var per = [0,0];
+     var surdef = [0,0];
+     var gdp = [0,0];
+     var rev = [0,0];
+     var spend = [0,0];
+        
+     var makeBars = function() {
+       
+       dyn.selectAll("div")
+	  .data(info)
+	  .enter()
+	  .append("div")
+	  .style("width", function(d) {
+	    return d + "px";
+	  })
+	  .text( function(d) {
+	    return d;
+	  });
+     };
+     var transitionTest = function( scale ) {
+       dyn.selectAll("div")
+	  .data(info)
+	  .transition()
+	  .duration(2000)
+	  .style("width", function(d) {
+	    return d * scale + "px";
+	  });
+     };
+     

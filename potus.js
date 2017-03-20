@@ -1,4 +1,4 @@
-// 2012 - 2016
+// 2012 & 2016
 
 var dyn = d3.select("#dynamic");
 var per = [["Percent in 2012", -6.8], ["Percent in 2016", -3.3]]; // perc
@@ -11,6 +11,8 @@ var disc = [["Discretionary in 2012", 1.23], ["Discretionary in 2016", 1.1]]; //
 var debt = [["Debt in 2012", 15.3], ["Debt in 2016", 17.4]]; // tril
 
 var makeBars = function(arr) {
+    d3.selectAll("div > *").remove();
+    console.log("!!!!");
     
     dyn.selectAll("div")
 	.data(arr)
@@ -18,7 +20,7 @@ var makeBars = function(arr) {
 	.append("div")
 	.style("width", function(d) {
 	    if (d[1] < 10) {
-		return d[1]*60 + "px";
+		return d[1]*80 + "px";
 	    } else {
 		return d[1]*30 + "px";
 	    }
@@ -28,6 +30,16 @@ var makeBars = function(arr) {
 	});
 };
 
+var gdpf = function() {
+    makeBars(gdp);
+};
+
+var revf = function() {
+    makeBars(rev);
+};
+
+
+/*
 var transitionTest = function( scale ) {
     dyn.selectAll("div")
 	.data(info)
@@ -37,11 +49,11 @@ var transitionTest = function( scale ) {
 	    return d * scale + "px";
 	});
 };
+*/
 
+var gdp_btn = document.getElementById("gdp");
+gdp_btn.addEventListener("click", gdpf );
 
-var gdpBtn = document.getElementById("gdp_btn");
-gdpBtn.addEventListener("click", makeBars(gdp) );
-
-var revBtn = document.getElementById("rev_btn");
-revBtn.addEventListener("click", makeBars(rev) );
+var rev_btn = document.getElementById("rev");
+rev_btn.addEventListener("click", revf );
 

@@ -30,6 +30,15 @@ var makeBars = function(arr) {
 	});
 };
 
+
+var perf = function() {
+    makeBars(per);
+};
+
+var surdeff = function() {
+    makeBars(surdef);
+};
+
 var gdpf = function() {
     makeBars(gdp);
 };
@@ -38,6 +47,21 @@ var revf = function() {
     makeBars(rev);
 };
 
+var spendf = function() {
+    makeBars(spend);
+};
+
+var mandf = function() {
+    makeBars(mand);
+};
+
+var discf = function() {
+    makeBars(disc);
+};
+
+var debtf = function() {
+    makeBars(debt);
+};
 
 /*
 var transitionTest = function( scale ) {
@@ -51,9 +75,26 @@ var transitionTest = function( scale ) {
 };
 */
 
+var per_btn = document.getElementById("per");
+per_btn.addEventListener("click", perf );
+
+var surdef_btn = document.getElementById("surdef");
+surdef_btn.addEventListener("click", surdeff );
+
 var gdp_btn = document.getElementById("gdp");
 gdp_btn.addEventListener("click", gdpf );
 
 var rev_btn = document.getElementById("rev");
 rev_btn.addEventListener("click", revf );
 
+var spend_btn = document.getElementById("spend");
+spend_btn.addEventListener("click", spendf );
+
+var mand_btn = document.getElementById("mand");
+mand_btn.addEventListener("click", mandf );
+
+var disc_btn = document.getElementById("disc");
+disc_btn.addEventListener("click", discf );
+
+var debt_btn = document.getElementById("debt");
+debt_btn.addEventListener("click", debtf );

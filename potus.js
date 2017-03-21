@@ -12,7 +12,7 @@ var debt = [["Debt in 2012", 15.3], ["Debt in 2016", 17.4]]; // tril
 
 var makeBars = function(arr) {
     d3.selectAll("div > *").remove();
-    console.log("!!!!");
+    //console.log("!!!!");
     
     dyn.selectAll("div")
 	.data(arr)
@@ -20,7 +20,9 @@ var makeBars = function(arr) {
 	.append("div")
 	.style("width", function(d) {
 	    d1 = Math.abs(d[1]);
-	    if (d1 < 10) {
+	    if (d1 < 5){
+		return d1*140 + "px";
+	    } else if (d1 < 10) {
 		return d1*80 + "px";
 	    } else {
 		return d1*30 + "px";

@@ -19,12 +19,21 @@ var makeBars = function(arr) {
 	.enter()
 	.append("div")
 	.style("width", function(d) {
-	    if (d[1] < 10) {
-		return d[1]*80 + "px";
+	    d1 = Math.abs(d[1]);
+	    if (d1 < 10) {
+		return d1*80 + "px";
 	    } else {
-		return d[1]*30 + "px";
+		return d1*30 + "px";
 	    }
-	})
+	    })
+        .style("background-color", function(d) {
+	    if (d[1] < 0) {
+		return "red";
+	    }
+	    else {
+		return "steelblue";
+	    }
+	    })
 	.text( function(d) {
 	    return d[0] + ": "  + d[1];
 	});
